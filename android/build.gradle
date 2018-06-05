@@ -1,0 +1,22 @@
+buildscript {
+
+    repositories {
+        google()
+        jcenter()
+    }
+
+    dependencies {
+        classpath "com.android.tools.build:gradle:${project.androidBuildPluginVersion}"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${project.kotlinVersion}"
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        maven { url "https://jitpack.io" }
+    }
+}
+
+apply from: 'dependencies.gradle'

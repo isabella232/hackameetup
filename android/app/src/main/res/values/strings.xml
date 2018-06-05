@@ -1,0 +1,5 @@
+<resources>
+    <string name="title_activity_flight_results">Flight Results</string>
+    <string name="results_amount">%d of %d results</string>
+    <string name="sort_filters">Sort &amp; filters</string>
+</resources>

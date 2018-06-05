@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="48dp"
+    tools:showIn="@layout/card_flight_result">
+
+    <ImageView
+        android:id="@+id/cardRow_carrierImage"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="16dp"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/ic_search_black"
+        tools:tint="@color/bondi_blue"/>
+
+    <TextView
+        android:id="@+id/cardRow_flightTimes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="18dp"
+        android:textAppearance="@style/TextAppearance.FlightCard.BigRow"
+        app:layout_constraintBottom_toTopOf="@+id/cardRow_flightCodes"
+        app:layout_constraintStart_toEndOf="@+id/cardRow_carrierImage"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="15:35 - 17:00"/>
+
+    <TextView
+        android:id="@+id/cardRow_flightHops"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="18dp"
+        android:textAppearance="@style/TextAppearance.FlightCard.BigRow"
+        app:layout_constraintBottom_toTopOf="@+id/cardRow_flightDuration"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Direct"/>
+
+    <TextView
+        android:id="@+id/cardRow_flightCodes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginStart="16dp"
+        android:textAppearance="@style/TextAppearance.FlightCard.SmallRow"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/cardRow_carrierImage"
+        tools:text="BUD-LGW, Wizz Air"/>
+
+    <TextView
+        android:id="@+id/cardRow_flightDuration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="16dp"
+        android:textAppearance="@style/TextAppearance.FlightCard.SmallRow"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="2h 25m"/>
+</android.support.constraint.ConstraintLayout>

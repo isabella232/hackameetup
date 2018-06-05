@@ -1,0 +1,68 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion project.compileSdkVersion as int
+
+    defaultConfig {
+        minSdkVersion project.minSdkVersion as int
+        targetSdkVersion project.targetSdkVersion as int
+        versionCode project.versionCode as int
+        versionName project.versionName
+    }
+
+    sourceSets {
+        main.kotlin.srcDirs += 'src/main/kotlin'
+        main.java.srcDirs += 'src/main/kotlin'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+
+    implementation project(':core')
+    implementation project(':logic')
+    implementation project(':services')
+
+    api commonDependencies.rxJava2
+
+    implementation commonDependencies.kotlinStdLib
+
+    implementation commonDependencies.picasso
+
+    // Android
+    implementation commonDependencies.constraintLayout
+    implementation commonDependencies.supportAppCompatV7
+    implementation commonDependencies.supportDesign
+    implementation commonDependencies.supportCardView
+    implementation commonDependencies.supportRecyclerView
+
+    // Architecture Components
+//    api commonDependencies.archLifecycleRuntime
+    api commonDependencies.archLifecycleExtensions
+    api commonDependencies.archLifecycleReactiveStreams
+    kapt commonDependencies.archLifecycleCompiler
+
+    // Dagger 2
+    implementation commonDependencies.dagger2
+    kapt commonDependencies.dagger2Compiler
+    compileOnly commonDependencies.javaxAnnotation
+
+    // OkHttp
+    implementation commonDependencies.okHttp
+    implementation commonDependencies.okHttpLoggingInterceptor
+
+
+}

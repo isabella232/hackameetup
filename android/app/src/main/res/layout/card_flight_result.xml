@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp">
+
+    <LinearLayout
+        android:id="@+id/flightCard_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/flightResult_row1"
+            layout="@layout/card_flight_result_row"/>
+
+        <include
+            android:id="@+id/flightResult_row2"
+            layout="@layout/card_flight_result_row"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#1e000000"/>
+
+        <include layout="@layout/card_flight_rating_row"/>
+
+    </LinearLayout>
+</android.support.v7.widget.CardView>
