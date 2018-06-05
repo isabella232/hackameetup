@@ -4,5 +4,5 @@ This repository contains a starter kit for a React and React Native apps. By def
 
 ## Choose your platform
 
-- [React](./web/Readme.md)
-- [React Native](./native/Readme.md)
+- [React](./web/README.md)
+- [React Native](./native/README.md)
