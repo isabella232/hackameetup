@@ -15,20 +15,15 @@ import android.widget.TextView
 import com.squareup.picasso.Picasso
 import kotterknife.bindView
 import net.skyscanner.hackameetup.R
-import net.skyscanner.hackameetup.application.getComponent
+import net.skyscanner.hackameetup.application.AppViewModelFactory
+import net.skyscanner.hackameetup.application.DefinitelyNotDagger
 import net.skyscanner.hackameetup.feature.flightsearch.data.FlightItinerary
 import net.skyscanner.hackameetup.feature.flightsearch.data.FlightLeg
 import net.skyscanner.hackameetup.flightresults.FlightResultsViewModel.FlightResults
-import net.skyscanner.hackameetup.injection.AppViewModelFactory
-import net.skyscanner.hackameetup.injection.InjectingActivity
-import javax.inject.Inject
 
-class FlightResultsActivity : AppCompatActivity(), InjectingActivity<FlightResultsComponent> {
+class FlightResultsActivity : AppCompatActivity() {
 
-    override val component: FlightResultsComponent by lazy { application.getComponent().mainActivityComponent() }
-
-    @Inject
-    lateinit var viewModelFactory: AppViewModelFactory
+    private val viewModelFactory: AppViewModelFactory = DefinitelyNotDagger.appViewModelFactory
 
     private val recycler: RecyclerView by bindView(R.id.recyclerview)
     private val paginationIndicator: TextView by bindView(R.id.results_page_indicator)
@@ -37,8 +32,6 @@ class FlightResultsActivity : AppCompatActivity(), InjectingActivity<FlightResul
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_flight_results)
-
-        component.inject(this)
 
         supportActionBar?.apply {
             setDisplayHomeAsUpEnabled(true)

@@ -13,9 +13,8 @@ import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 import java.time.temporal.TemporalAdjusters
 import java.util.*
-import javax.inject.Inject
 
-class FlightResultsViewModel @Inject constructor(
+class FlightResultsViewModel(
     private val retrieveFlights: RetrieveFlights
 ) : ViewModel() {
     val flightResultsLiveData: MutableLiveData<FlightResults> = MutableLiveData()

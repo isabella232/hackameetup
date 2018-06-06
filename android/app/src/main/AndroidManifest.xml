@@ -6,9 +6,7 @@
 
     <uses-permission android:name="android.permission.INTERNET"/>
 
-    <application
-        android:name="net.skyscanner.hackameetup.application.SkyscannerTaskApplication"
-        tools:ignore="AllowBackup,GoogleAppIndexingWarning">
+    <application tools:ignore="AllowBackup,GoogleAppIndexingWarning,MissingApplicationIcon">
         <activity
             android:name="net.skyscanner.hackameetup.flightresults.FlightResultsActivity"
             android:label="@string/title_activity_flight_results"

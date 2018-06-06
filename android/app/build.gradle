@@ -3,6 +3,7 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 
 android {
+
     compileSdkVersion project.compileSdkVersion as int
 
     defaultConfig {
@@ -10,11 +11,14 @@ android {
         targetSdkVersion project.targetSdkVersion as int
         versionCode project.versionCode as int
         versionName project.versionName
+
+        buildConfigField "String", "SKYSCANNER_API_KEY", "\"${project.skyscannerApiKey}\""
     }
 
     sourceSets {
-        main.kotlin.srcDirs += 'src/main/kotlin'
         main.java.srcDirs += 'src/main/kotlin'
+        test.java.srcDirs += 'src/test/kotlin'
+        androidTest.java.srcDirs += 'src/androidTest/kotlin'
     }
 
     buildTypes {
@@ -32,10 +36,6 @@ android {
 
 dependencies {
 
-    implementation project(':core')
-    implementation project(':logic')
-    implementation project(':services')
-
     api commonDependencies.rxJava2
 
     implementation commonDependencies.kotlinStdLib
@@ -50,19 +50,23 @@ dependencies {
     implementation commonDependencies.supportRecyclerView
 
     // Architecture Components
-//    api commonDependencies.archLifecycleRuntime
     api commonDependencies.archLifecycleExtensions
     api commonDependencies.archLifecycleReactiveStreams
     kapt commonDependencies.archLifecycleCompiler
 
-    // Dagger 2
-    implementation commonDependencies.dagger2
-    kapt commonDependencies.dagger2Compiler
-    compileOnly commonDependencies.javaxAnnotation
+    // Retrofit
+    implementation commonDependencies.retrofit2
+    implementation commonDependencies.retrofitRxAdapter
+    implementation commonDependencies.retrofitConverter
 
     // OkHttp
     implementation commonDependencies.okHttp
     implementation commonDependencies.okHttpLoggingInterceptor
 
+    implementation commonDependencies.gson
 
+    // Tests
+    testImplementation testDependencies.junit
+    testImplementation testDependencies.mockito
+    testImplementation testDependencies.kluent
 }
