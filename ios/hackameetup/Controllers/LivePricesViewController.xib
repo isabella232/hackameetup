@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LivePricesViewController" customModule="AppChallenge" customModuleProvider="target">
+            <connections>
+                <outlet property="headerResultsCountLabel" destination="auC-kB-Bb2" id="pXW-uD-58d"/>
+                <outlet property="headerSubTitleLabel" destination="x4s-Gz-JtL" id="321-qf-twb"/>
+                <outlet property="headerTitleLabel" destination="jUF-S2-WuD" id="1yg-1s-Wdz"/>
+                <outlet property="headerView" destination="yuP-t7-PbX" id="28Y-4Y-Vvc"/>
+                <outlet property="tableView" destination="5G0-G1-uUf" id="gJC-ej-6jb"/>
+                <outlet property="view" destination="Guw-Sl-eku" id="0fO-RV-kLM"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="Guw-Sl-eku">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5G0-G1-uUf">
+                    <rect key="frame" x="0.0" y="105" width="375" height="562"/>
+                    <color key="backgroundColor" red="0.96470588239999999" green="0.96078431369999995" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="pRb-d1-fsx"/>
+                        <outlet property="delegate" destination="-1" id="Vj7-vA-pBY"/>
+                    </connections>
+                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yuP-t7-PbX" userLabel="header">
+                    <rect key="frame" x="0.0" y="20" width="375" height="85"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Edinburgh to London" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jUF-S2-WuD">
+                            <rect key="frame" x="50" y="8" width="275" height="23.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mar 01., Wed – Mar 05. Sun" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x4s-Gz-JtL">
+                            <rect key="frame" x="50" y="35.5" width="275" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="365 of 365 results shown" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="auC-kB-Bb2">
+                            <rect key="frame" x="8" y="60" width="359" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="jUF-S2-WuD" firstAttribute="top" secondItem="yuP-t7-PbX" secondAttribute="top" constant="8" id="37r-Up-5Zz"/>
+                        <constraint firstItem="x4s-Gz-JtL" firstAttribute="centerX" secondItem="jUF-S2-WuD" secondAttribute="centerX" id="3aI-pk-5VV"/>
+                        <constraint firstItem="x4s-Gz-JtL" firstAttribute="width" secondItem="jUF-S2-WuD" secondAttribute="width" id="6LQ-69-hQQ"/>
+                        <constraint firstItem="auC-kB-Bb2" firstAttribute="leading" secondItem="yuP-t7-PbX" secondAttribute="leading" constant="8" id="HGy-RN-sRU"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="85" id="Rgk-ub-ctm"/>
+                        <constraint firstItem="x4s-Gz-JtL" firstAttribute="top" secondItem="jUF-S2-WuD" secondAttribute="bottom" constant="4" id="ZIQ-Mg-GQS"/>
+                        <constraint firstItem="jUF-S2-WuD" firstAttribute="leading" secondItem="yuP-t7-PbX" secondAttribute="leading" constant="50" id="fLk-v9-iG6"/>
+                        <constraint firstItem="auC-kB-Bb2" firstAttribute="top" secondItem="x4s-Gz-JtL" secondAttribute="bottom" priority="750" constant="8" id="gA8-Zl-ojr"/>
+                        <constraint firstAttribute="trailing" secondItem="auC-kB-Bb2" secondAttribute="trailing" constant="8" id="kvF-HK-h6X"/>
+                        <constraint firstAttribute="trailing" secondItem="jUF-S2-WuD" secondAttribute="trailing" constant="50" id="sly-lD-92m"/>
+                        <constraint firstAttribute="bottom" secondItem="auC-kB-Bb2" secondAttribute="bottom" constant="8" id="tzf-xJ-4qs"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="0po-Ap-oio"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="5G0-G1-uUf" firstAttribute="bottom" secondItem="SM9-D3-soA" secondAttribute="bottom" id="7aN-g5-3x4"/>
+                <constraint firstItem="yuP-t7-PbX" firstAttribute="leading" secondItem="SM9-D3-soA" secondAttribute="leading" id="9PU-Cl-bPe"/>
+                <constraint firstItem="yuP-t7-PbX" firstAttribute="trailing" secondItem="SM9-D3-soA" secondAttribute="trailing" id="LDY-o3-JWx"/>
+                <constraint firstItem="5G0-G1-uUf" firstAttribute="leading" secondItem="SM9-D3-soA" secondAttribute="leading" id="VTM-Nh-dTk"/>
+                <constraint firstItem="5G0-G1-uUf" firstAttribute="top" secondItem="yuP-t7-PbX" secondAttribute="bottom" id="cS5-f9-l0n"/>
+                <constraint firstItem="5G0-G1-uUf" firstAttribute="trailing" secondItem="SM9-D3-soA" secondAttribute="trailing" id="fCb-ZJ-H75"/>
+                <constraint firstItem="yuP-t7-PbX" firstAttribute="top" secondItem="SM9-D3-soA" secondAttribute="top" id="tPF-Pd-Ef9"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <viewLayoutGuide key="safeArea" id="SM9-D3-soA"/>
+            <point key="canvasLocation" x="153.5" y="-156.5"/>
+        </view>
+    </objects>
+</document>

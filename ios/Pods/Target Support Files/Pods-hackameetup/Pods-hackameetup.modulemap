@@ -1,0 +1,6 @@
+framework module Pods_hackameetup {
+  umbrella header "Pods-hackameetup-umbrella.h"
+
+  export *
+  module * { export * }
+}
