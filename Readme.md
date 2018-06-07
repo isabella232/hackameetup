@@ -6,3 +6,5 @@ This repository contains a starter kit for a React and React Native apps. By def
 
 - [React](./web/README.md)
 - [React Native](./native/README.md)
+- [Android](./android/README.md)
+- [iOS](./ios/README.md)
