@@ -19,10 +19,10 @@ private const val PRODUCTION_BASE_URL = "http://partners.api.skyscanner.net/apis
 
 class FlightsServiceModule(private val networkModule: NetworkModule) {
 
-    private fun provideService(retrofit: Retrofit = networkModule.provideRetrofit(provideBaseUrl())): FlightsService =
+    fun provideService(retrofit: Retrofit = networkModule.provideRetrofit(provideBaseUrl())): FlightsService =
         retrofit.create(FlightsService::class.java)
 
-    private fun provideMockService(gson: Gson): FlightsService = MockFlightsService(gson)
+    fun provideMockService(gson: Gson): FlightsService = MockFlightsService(gson)
 
     private fun provideBaseUrl(): String = PRODUCTION_BASE_URL
 
